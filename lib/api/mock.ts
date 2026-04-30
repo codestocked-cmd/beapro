@@ -119,7 +119,7 @@ export const MOCK_TRAINING_FEEDBACK: TrainingFeedback = {
   coach_message: "Strong session overall. Your guard retention has improved significantly over the past two weeks — keep drilling the hip escape sequence. The main area holding you back is your guard passing under pressure: you tend to stall in the knee slice when your partner defends actively. Focus next week on chaining knee slice to leg drag when the first pass attempt gets countered.",
   positives: [
     { observation: 'Hip escape and guard recovery from bottom', timestamp_label: '12:30', category: 'Defense', suggested_drill: 'Hip escape drill × 50 reps each side' },
-    { observation: 'Back exposure awareness — you consistently stayed chest down when threatened', timestamp_label: '34:15', category: 'Awareness', suggested_drill: null },
+    { observation: 'Back exposure awareness — you consistently stayed chest down when threatened', timestamp_label: '34:15', category: 'Awareness' },
     { observation: 'Collar tie to single leg transition was clean and consistent', timestamp_label: '01:05:20', category: 'Takedown', suggested_drill: 'Level change drill to single leg' },
   ],
   improvements: [
