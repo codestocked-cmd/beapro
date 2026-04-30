@@ -26,7 +26,6 @@ type FormData = z.infer<typeof schema>
 
 export default function SignupPage() {
   const router = useRouter()
-  const supabase = createClient()
 
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<FormData>({
     resolver: zodResolver(schema),
@@ -34,6 +33,7 @@ export default function SignupPage() {
   })
 
   async function onSubmit(data: FormData) {
+    const supabase = createClient()
     const { error } = await supabase.auth.signUp({
       email: data.email,
       password: data.password,

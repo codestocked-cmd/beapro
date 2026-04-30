@@ -23,7 +23,6 @@ type FormData = z.infer<typeof schema>
 
 export default function LoginPage() {
   const router = useRouter()
-  const supabase = createClient()
   const [googleLoading, setGoogleLoading] = useState(false)
 
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<FormData>({
@@ -31,6 +30,7 @@ export default function LoginPage() {
   })
 
   async function onSubmit(data: FormData) {
+    const supabase = createClient()
     const { error } = await supabase.auth.signInWithPassword({
       email: data.email,
       password: data.password,
@@ -44,6 +44,7 @@ export default function LoginPage() {
 
   async function signInWithGoogle() {
     setGoogleLoading(true)
+    const supabase = createClient()
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: { redirectTo: `${window.location.origin}/dashboard` },
